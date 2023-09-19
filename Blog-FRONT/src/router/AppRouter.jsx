@@ -4,6 +4,7 @@ import { AdminScreen } from "../pages/AdminScreen"
 import { ArticuloPage } from "../pages/ArticuloPage"
 import { LoginScreen } from "../pages/LoginScreen"
 import { RegisterScreen } from "../pages/RegisterScreen"
+import { EditorScreen } from "../pages/EditorScreen"
 
 export const AppRouter = () => {
   return (
@@ -15,6 +16,7 @@ export const AppRouter = () => {
                     <Route path="/articulo/:id" element={<ArticuloPage/>} />
                     <Route path="/login" element={<LoginScreen/>} />
                     <Route path="/register" element={<RegisterScreen/>} />
+                    <Route path="/editar/:id" element={<EditorScreen/>} />
             </Routes>
         </BrowserRouter>
     </>

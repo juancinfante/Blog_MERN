@@ -40,9 +40,36 @@ const obtenerArticulo = async (req, res) => {
         console.log(error)
     }
 }
+const editarArticulo = async (req, res) => {
+    try {
+        await Articulo.findByIdAndUpdate(req.body._id, req.body);
+        res.status(200).json({
+            msg: "producto actualizado"
+        })
+        console.log("funciona")
+    } catch (error) {
+        res.status(400).json({
+            msg: error
+        })
+    }
+}
+const eliminarArticulo = async (req, res) => {
+    try {
+        await Articulo.findByIdAndDelete(req.params.id);
+        res.json({
+          msg: "Articulo eliminado."  
+        })
+    } catch (error) {
+        res.status(400).json({
+            msg: error
+        })
+    }
+}
 
 module.exports = {
     agregarArticulo,
     obtenerArticulos,
-    obtenerArticulo
+    obtenerArticulo,
+    editarArticulo,
+    eliminarArticulo
 }

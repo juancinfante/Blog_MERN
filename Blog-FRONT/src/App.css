@@ -44,6 +44,14 @@ nav{
 .articulo-inner h1{
   font-size: 2rem;
 }
+.articulo-inner .titulo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.articulo-inner span:hover{
+  cursor: pointer;
+}
 .articulo-inner p{
   text-overflow: ellipsis;
   overflow: hidden;
@@ -129,5 +137,10 @@ nav{
   width: 100px;
   margin-top: 15px;
 }
+.admin-option{
+  margin-top: 10px;
+}
+.admin-option button:nth-child(1){
+  margin-right: 10px;
 
-
+}
