@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Navegacion } from "../components/Navegacion"
 import api from "../api/api";
 import { useNavigate } from "react-router";
+import swal from "sweetalert";
 
 
 export const LoginScreen = () => {
@@ -21,12 +22,11 @@ export const LoginScreen = () => {
           username,
           contraseña
         })
-        console.log(resp.data.id)
         localStorage.setItem('id', resp.data.id);
-        alert(resp.data.msg);
+        swal( resp.data.msg ,  "" ,  "success" )
         navigate('/');
       } catch (error) {
-        alert(error.response.data.msg)
+        swal( error.response.data.msg ,  "" ,  "error" )
       }
     }
   return (

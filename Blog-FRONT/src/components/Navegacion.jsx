@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom"
 import api from "../api/api"
+import swal from "sweetalert";
 
 
 // eslint-disable-next-line react/prop-types
@@ -23,9 +24,23 @@ export const Navegacion = () => {
 
   const logout = (e) => {
     e.preventDefault();
-    localStorage.removeItem('id');
-    alert("Vuelve pronto!");
-    location.href="/";
+    swal({
+      title: "Estas seguro que deseas salir?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then(async (willDelete) => {
+      if (willDelete){
+      localStorage.removeItem('id');
+      swal("Vuelve Pronto!", {
+        icon: "success",
+      });
+      setTimeout(() => {
+      location.href="/";
+      }, 1300);
+      }
+    });
   }
 
   return (

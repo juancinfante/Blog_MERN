@@ -9,7 +9,7 @@
 /* NAV */
 
 .navlink{
-  text-decoration: none;
+  text-decoration: none !important;
   color: #000;
 }
 .navlink:hover{
@@ -48,6 +48,10 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.articulo-container .titulo h1{
+  font-size: 20px;
 }
 .articulo-inner span:hover{
   cursor: pointer;

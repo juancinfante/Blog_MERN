@@ -3,6 +3,7 @@ import { Navegacion } from "../components/Navegacion"
 import { useNavigate } from 'react-router';
 
 import api from "../api/api"
+import swal from "sweetalert";
 
 
 export const RegisterScreen = () => {
@@ -24,10 +25,12 @@ export const RegisterScreen = () => {
                     contraseña
                 })
                 localStorage.setItem('id',resp.data.id);
-                alert(resp.data.msg)
+                swal( resp.data.msg ,  "" ,  "success" )
+
                 navigate('/');
             } catch (error) {
-                alert(error.response.data.msg)
+                swal( error.response.data.msg ,  "" ,  "success" )
+
             }
         }else{
             alert('Las contraseñas no son iguales');
